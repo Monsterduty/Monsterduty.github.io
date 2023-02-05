@@ -77,11 +77,15 @@ function loadIMG()
 		let image = document.createElement("img")
 		image.setAttribute("class", "pairImg")
 		image.setAttribute("src", "resources/projectsImages/" + projectsImages[currentIconSelected].substr(0,projectsImages[currentIconSelected].search("  ")))
+		image.style.gridColumnStart = "1"
+		image.style.gridColumnEnd = "1"
 		element.appendChild(image)
 
 		image = document.createElement("img")
 		image.setAttribute("class", "pairImg")
 		image.setAttribute("src", "resources/projectsImages/" + projectsImages[currentIconSelected].substr(projectsImages[currentIconSelected].search("  ") + 2))
+		image.style.gridColumnStart = "2"
+		image.style.gridColumnEnd = "2"
 		element.appendChild(image)
 	}
 	else
@@ -89,6 +93,8 @@ function loadIMG()
 		let image = document.createElement("img")
 		image.setAttribute("class", "aloneImg")
 		image.setAttribute("src", "resources/projectsImages/" + projectsImages[currentIconSelected])
+		image.style.gridColumnStart = "1"
+		image.style.gridColumnEnd = "2"
 		element.appendChild(image)
 	}
 }
