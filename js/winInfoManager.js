@@ -75,19 +75,19 @@ function loadIMG()
 	if ( projectsImages[currentIconSelected].search("  ") != -1 )
 	{
 		let image = document.createElement("img")
-		image.setAttribute("class", "imgFilePair")
+		image.setAttribute("class", "pairImg")
 		image.setAttribute("src", "resources/projectsImages/" + projectsImages[currentIconSelected].substr(0,projectsImages[currentIconSelected].search("  ")))
 		element.appendChild(image)
 
 		image = document.createElement("img")
-		image.setAttribute("class", "imgFilePair")
+		image.setAttribute("class", "pairImg")
 		image.setAttribute("src", "resources/projectsImages/" + projectsImages[currentIconSelected].substr(projectsImages[currentIconSelected].search("  ") + 2))
 		element.appendChild(image)
 	}
 	else
 	{
 		let image = document.createElement("img")
-		image.setAttribute("class", "imgFile")
+		image.setAttribute("class", "aloneImg")
 		image.setAttribute("src", "resources/projectsImages/" + projectsImages[currentIconSelected])
 		element.appendChild(image)
 	}
@@ -124,21 +124,21 @@ function loadName()
 
 function openWinInfo()
 {
-	// let element = document.getElementById("Logo")
-	// element.setAttribute("src", "resources/logos/winInfo/" + logosSvgArray[currentIconSelected] )
+	let element = document.getElementById("Logo")
+	element.setAttribute("src", "resources/logos/winInfo/" + logosSvgArray[currentIconSelected] )
 
-	// element = document.getElementById("Description")
-	// element.innerHTML = ""
-	// let text = document.createTextNode(descriptionsArray[currentIconSelected])
-	// element.appendChild(text)
+	element = document.getElementById("Description")
+	element.innerHTML = ""
+	let text = document.createTextNode(descriptionsArray[currentIconSelected])
+	element.appendChild(text)
 
 
-//	loadName()
+	loadName()
 
-//	loadIMG()
+	loadIMG()
 
-	// element = document.getElementById("Link")
-	// element.innerHTML = ""
-	// text = document.createTextNode(links[currentIconSelected])
-	// element.appendChild(text)
+	element = document.getElementById("Link")
+	element.innerHTML = ""
+	text = document.createTextNode(links[currentIconSelected])
+	element.appendChild(text)
 }
