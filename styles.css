@@ -36,6 +36,8 @@ body
 	max-width: 100%;
 	display: grid;
 	grid-template-rows: 10% 80% 10%;
+	grid-template-columns: 100%;
+	grid-row-gap: 5px;
 }
 
 #menuItems
@@ -43,24 +45,32 @@ body
 	margin: auto;
 	border: 1px solid green;
 	width: 80%;
-	height: 100%;
+	height: 90%;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: rgba(255,255,255,0.5);
+	border-radius: 20px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 #menuItems #itemsContainer
 {
-	height: 100#;
+	height: 100%;
+	width: 100%;
+	margin: auto;
 	display: grid;
-	grid-template-rows: 100#;
-	grid-template-columns: repeat(10, 10%);
+	grid-template-rows: 100%;
+	grid-template-columns: repeat(10, 9%);
+	column-gap: 1%;
 }
 
 .itemMenuIcons
 {
-	width: 100%;
+	width: min(8vw,8vh);
+	max-width: 100%;
+	margin: auto;
 }
 
 #menuCursor
@@ -70,12 +80,18 @@ body
 
 #winInfo
 {
+	width: 95%;
+	margin: 0 auto;
 	padding: 10px;
 	border: 1px solid blue;
 	background: rgba(255,255,255,0.1);
 	border-radius: 20px;
 	backdrop-filter: blur(10px);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	overflow: hidden;
+
+	font-size: 2vw;
+
 	display: grid;
 	grid-template-areas:
 	"logo name"
@@ -93,13 +109,16 @@ body
 	height: 100%;
 	grid-area: logo;
 	margin: auto;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .infoDescription
 {
-	width: 100%;
+	width: 95%;
 	grid-area: description;
 	text-align: center;
+	margin: 0 auto;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .infoName
@@ -110,6 +129,7 @@ body
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .infoImages
@@ -122,6 +142,7 @@ body
 	min-width: 0px;
 	grid-area: image;
 	overflow: hidden;
+	display: flex;
 }
 
 .infoImages .aloneImg
@@ -129,13 +150,17 @@ body
 	width: 100%;
 	height: 100%;
 	object-fit: scale-down;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	/*border-radius: 8px;*/
 }
 
 .infoImages .pairImg
 {
 	width: 49%;
-	height: 100%;
+	height: auto;
 	object-fit: scale-down;
+	/*border-radius: 40px;*/
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .infoLink
@@ -145,10 +170,24 @@ body
 	text-align: center;
 	display: flex;
 	justify-content: center;
-	align-items: center
+	align-items: center;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 #contactMe
 {
 	border: 1px solid magenta;
+	display: flex;
+	gap: 3%;
+	justify-content: center;
+	/*align-items: center;*/
+}
+
+#contactMe .bottomMenu
+{
+	width: 30%;
+	height: 60%;
+	background: rgba(255,255,255,0.5);
+	border-radius: 20px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
