@@ -123,6 +123,7 @@ body
 	grid-area: description;
 	text-align: center;
 	margin: 0 auto;
+	font-size: min(3vw, 3vh);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -203,4 +204,76 @@ body
 	background: rgba(255,255,255,0.5);
 	border-radius: 20px;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/*SQUARE LAYOUT*/
+@media screen and (min-aspect-ratio: 9/16) and (max-aspect-ratio: 5/4)
+{
+	#winInfo
+	{
+		grid-template-areas:
+		"logo description"
+		"name name"
+		"image image"
+		"link link"
+		;
+		grid-template-rows: 40% 6% 48% 6%;
+		grid-template-columns: 40% 60%;
+	}
+
+	.infoLogo
+	{
+		width: 90%;
+	}
+
+	.infoDescription
+	{
+		margin: auto;
+		font-size: min(3vw, 3vh);
+	}
+
+	.infoName
+	{
+		align-items: start;
+		font-size: min(3vw, 3vh);
+	}
+
+	.infoLink
+	{
+		font-size: min(3vw, 3vh);
+	}
+}
+
+/*PORTRAIT LAYOUT*/
+@media screen and (max-aspect-ratio: 9/16)
+{
+	#winInfo
+	{
+		grid-template-areas:
+		"logo"
+		"description"
+		"name"
+		"image"
+		"link"
+		;
+		grid-template-rows: 20% 20% 5% 50% 5%;
+		grid-template-columns: 100%;
+	}
+
+	.infoDescription
+	{
+		margin: auto;
+		font-size: min(3.5vw, 3.5vh);
+	}
+
+	.infoName
+	{
+		font-size: min(4vw, 4vh);
+	}
+
+	.infoLink
+	{
+		font-size: min(4vw, 4vh);
+	}
+
 }
