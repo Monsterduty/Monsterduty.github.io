@@ -71,11 +71,16 @@ body
 	width: min(8vw,8vh);
 	max-width: 100%;
 	margin: auto;
+	z-index: 10;
 }
 
 #menuCursor
 {
 	position: absolute;
+	background: white;
+	width: min(8vw,8vh);
+	height: min(8vw,8vh);
+	z-index: 5;
 }
 
 #winInfo
