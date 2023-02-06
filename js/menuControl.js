@@ -8,11 +8,14 @@ function setPos( iconPos )
 {
 	cursor.style.filter = "opacity(100%) blur(13px)"
 	let initial = icons[0].getBoundingClientRect().x
+	let iconArea = icons[iconPos].getBoundingClientRect()
+	let cursorArea = cursor.getBoundingClientRect()
 
-	let keyFrames = [ {marginLeft: cursor.style.marginLeft,}, {marginLeft: -initial + icons[iconPos].getBoundingClientRect().x + "px"} ]
-	let options = { duration: 300, ease: "ease-in", iterations: 1 }
+	let keyFrames = [ {transform: "translateX(" + (-initial + cursorArea.x) + "px)",}, {transform: "translateX(" + (iconArea.x - initial) + "px)"} ]
+	let options = { duration: 500, easing: "ease", iterations: 1 }
 
-	cursor.style.marginLeft =  -initial + icons[iconPos].getBoundingClientRect().x + "px"
+	cursor.style.transform = "translateX(" + (iconArea.x - initial) + "px)"
+	//cursor.style.marginLeft = (-initial + iconArea.x) + "px"
 	cursor.animate(keyFrames, options)
 }
 

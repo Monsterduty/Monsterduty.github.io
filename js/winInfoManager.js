@@ -87,6 +87,18 @@ function loadIMG()
 		image.style.gridColumnStart = "2"
 		image.style.gridColumnEnd = "2"
 		element.appendChild(image)
+
+		//to add the magnifying Glass
+		let targets = document.getElementsByClassName("pairImg")
+		for ( let i = 0; i < targets.length; i++ )
+		{
+			targets[i].addEventListener("mouseenter", (e) => { glass(targets[i]) } )
+			targets[i].addEventListener("mouseout", (e) => {
+				let aux = document.getElementById("magnifyGlass")
+				if ( aux != undefined )
+					aux.remove()
+			} )
+		}
 	}
 	else
 	{
@@ -96,6 +108,14 @@ function loadIMG()
 		image.style.gridColumnStart = "1"
 		image.style.gridColumnEnd = "2"
 		element.appendChild(image)
+
+		//to add the magnifying Glass
+		image.addEventListener("mouseenter", (e) => {glass(image)})
+		image.addEventListener("mouseout", (e) => {
+			let aux = document.getElementById("magnifyGlass")
+			if (aux != undefined)
+				aux.remove()
+		} )
 	}
 }
 
