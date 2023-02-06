@@ -255,6 +255,12 @@ body
 /*SQUARE LAYOUT*/
 @media screen and (min-aspect-ratio: 9/16) and (max-aspect-ratio: 5/4)
 {
+
+	#menuItems
+	{
+		height: 9vw;
+	}
+
 	#winInfo
 	{
 		grid-template-areas:
@@ -305,6 +311,13 @@ body
 /*PORTRAIT LAYOUT*/
 @media screen and (max-aspect-ratio: 9/16)
 {
+
+	#menuItems
+	{
+		height: 60%;
+		width: 90%;
+	}
+
 	#winInfo
 	{
 		grid-template-areas:
