@@ -3,6 +3,7 @@ let bar = document.getElementById("menuItems")
 let icons = document.getElementsByClassName("itemMenuIcons")
 let currentIconSelected
 let cursorPos = -1;
+let lastXPosition = 0
 
 function setPos( iconPos )
 {
@@ -11,12 +12,13 @@ function setPos( iconPos )
 	let iconArea = icons[iconPos].getBoundingClientRect()
 	let cursorArea = cursor.getBoundingClientRect()
 
-	let keyFrames = [ {transform: "translateX(" + (-initial + cursorArea.x + iconArea.width) + "px)",}, {transform: "translateX(" + (iconArea.x - initial) + "px)"} ]
+	let keyFrames = [ {transform: "translateX(" + lastXPosition + "px)",}, {transform: "translateX(" + (iconArea.x - initial) + "px)"} ]
 	let options = { duration: 500, easing: "ease", iterations: 1 }
 
 	cursor.style.transform = "translateX(" + (iconArea.x - initial) + "px)"
 	//cursor.style.marginLeft = (-initial + iconArea.x) + "px"
 	cursor.animate(keyFrames, options)
+	lastXPosition = iconArea.x - initial
 }
 
 function keyDeal( key )
