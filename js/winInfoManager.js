@@ -133,7 +133,7 @@ function loadName()
 		element.appendChild(name)
 
 		name = document.createElement("div")
-		text = document.createTextNode(titlesOfProjects[currentIconSelected].substr(titlesOfProjects[currentIconSelected].search("  ")) + 2)
+		text = document.createTextNode(titlesOfProjects[currentIconSelected].substr(titlesOfProjects[currentIconSelected].search("  ") + 2))
 		name.appendChild(text)
 		name.setAttribute("class", "nameText")
 		element.appendChild(name)
@@ -150,6 +150,11 @@ function loadName()
 
 function openWinInfo()
 {
+	//check if there's a magnifyng glass without clossing to close it.
+	let mGlass = document.getElementById("magnifyGlass")
+	if ( mGlass != undefined )
+		mGlass.remove()
+
 	let element = document.getElementById("Logo")
 	element.setAttribute("src", "resources/logos/winInfo/" + logosSvgArray[currentIconSelected] )
 
@@ -167,4 +172,46 @@ function openWinInfo()
 	element.innerHTML = ""
 	text = document.createTextNode(links[currentIconSelected])
 	element.appendChild(text)
+
+	let winInfo = document.getElementById("winInfo")
+
+	winInfo.style.visibility = "visible"
+
+	let animation =
+	[
+		{width: "0%", height: "0%"},
+		{width: "95%", height: "100%"},
+	]
+	let options = { duration: 500, easing: "ease", iterations: 1 }
+
+	winInfo.animate(animation, options)
+
+}
+
+function closeWinInfo()
+{
+	//check if there's a magnifyng glass without clossing to close it.
+	let mGlass = document.getElementById("magnifyGlass")
+	if ( mGlass != undefined )
+		mGlass.remove()
+
+	//check if there's a winInfo element to close
+	let winInfo = document.getElementById("winInfo")
+	if (winInfo == undefined) return;
+
+	let closeAnimation =
+	[
+		{
+			width: "95%", height: "100%"
+		},
+		{
+			width: "0%", height: "0%"
+		}
+	]
+	let options = { duration: 500, easing: "ease", iterations: 1 }
+
+	winInfo.animate(closeAnimation, options)
+
+	//wait untill the animation ends to perform the hide style.
+	setTimeout( () => {winInfo.style.visibility = "hidden"} , 450)
 }

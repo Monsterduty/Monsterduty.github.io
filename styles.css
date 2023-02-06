@@ -42,7 +42,6 @@ body
 #menuItems
 {
 	margin: auto;
-	border: 1px solid green;
 	width: 80%;
 	height: 90%;
 	overflow: hidden;
@@ -94,6 +93,7 @@ body
 	top: 0;
 	bottom: 0;
 	left: 20px;
+	overflow: hidden;
 	/*right: 0;*/
 	margin: auto;
 	/*margin: auto 20px;*/
@@ -105,12 +105,13 @@ body
 
 #winInfo
 {
+	visibility: hidden;
 	width: 95%;
 	margin: 0 auto;
 	padding: 10px;
 	background: rgba(255,255,255,0.1);
 	border-radius: 20px;
-	/*backdrop-filter: blur(5px);*/
+	backdrop-filter: blur(5px);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	overflow: hidden;
 
@@ -152,8 +153,10 @@ body
 	width: 95%;
 	grid-area: description;
 	text-align: center;
+	display: flex;
+	align-items: center;
 	margin: 0 auto;
-	font-size: min(3vw, 3vh);
+	font-size: 3.8vh;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -166,6 +169,11 @@ body
 	justify-content: center;
 	align-items: center;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.infoName .nameText
+{
+	margin: auto;
 }
 
 .infoImages
@@ -235,6 +243,15 @@ body
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+/*PSEUDO LANDSCAPE LAYOUT*/
+@media screen and (max-aspect-ratio: 8/4)
+{
+	.infoDescription
+	{
+		font-size: 2vw;
+	}
+}
+
 /*SQUARE LAYOUT*/
 @media screen and (min-aspect-ratio: 9/16) and (max-aspect-ratio: 5/4)
 {
@@ -248,6 +265,18 @@ body
 		;
 		grid-template-rows: 40% 6% 48% 6%;
 		grid-template-columns: 40% 60%;
+	}
+
+	#magnifyGlass
+	{
+		/*top: 20px;*/
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: -55%;
+		margin: auto;
+		height: 40%;
+		width: 95%;
 	}
 
 	.infoLogo

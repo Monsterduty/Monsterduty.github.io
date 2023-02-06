@@ -11,7 +11,7 @@ function setPos( iconPos )
 	let iconArea = icons[iconPos].getBoundingClientRect()
 	let cursorArea = cursor.getBoundingClientRect()
 
-	let keyFrames = [ {transform: "translateX(" + (-initial + cursorArea.x) + "px)",}, {transform: "translateX(" + (iconArea.x - initial) + "px)"} ]
+	let keyFrames = [ {transform: "translateX(" + (-initial + cursorArea.x + iconArea.width) + "px)",}, {transform: "translateX(" + (iconArea.x - initial) + "px)"} ]
 	let options = { duration: 500, easing: "ease", iterations: 1 }
 
 	cursor.style.transform = "translateX(" + (iconArea.x - initial) + "px)"
@@ -21,6 +21,7 @@ function setPos( iconPos )
 
 function keyDeal( key )
 {
+	let last = cursorPos
 	switch (key)
 	{
 		case "ArrowRight":
@@ -34,6 +35,7 @@ function keyDeal( key )
 			break
 
 		case "Enter":
+			if ( cursorPos == -1 ) return;
 			currentIconSelected = cursorPos
 			openWinInfo()
 			break;
@@ -42,6 +44,7 @@ function keyDeal( key )
 			cursorPos = -1
 			cursor.style.filter = "opacity(0%)"
 			cursor.style.marginLeft = "0px"
+			closeWinInfo()
 			return;
 			break;
 
@@ -50,7 +53,8 @@ function keyDeal( key )
 			break;
 	}
 
-	setPos( cursorPos )
+	if ( cursorPos != last )
+		setPos( cursorPos )
 }
 
 cursor.style.marginLeft = "0px"
