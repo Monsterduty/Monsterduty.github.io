@@ -47,6 +47,8 @@ function keyDeal( key )
 			cursor.style.filter = "opacity(0%)"
 			cursor.style.marginLeft = "0px"
 			closeWinInfo()
+			closeBottomMenu()
+			document.getElementById("bottomMenu").setAttribute("class", "bottomMenu inactiveMenuButton")
 			return;
 			break;
 

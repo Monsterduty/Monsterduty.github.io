@@ -3,6 +3,9 @@ let button = document.getElementById("bottomMenu")
 function openBottomMenu()
 {
 	let menu = document.getElementById("contactMeContent")
+	
+	if ( menu.style.visibility == "visible" ) return;
+
 	let pos = menu.getBoundingClientRect()
 
 	let openAnimation =
@@ -34,6 +37,9 @@ function closeBottomMenu()
 {
 
 	let menu = document.getElementById("contactMeContent")
+	
+	if ( menu.style.visibility == "hidden" ) return;
+
 	let pos = menu.getBoundingClientRect()
 
 	let closeAnimation =
