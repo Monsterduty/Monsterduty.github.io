@@ -1,0 +1,322 @@
+.contactMeContent
+{
+	visibility: hidden;
+	position: absolute;
+	width: 90%;
+	height: 40%;
+	padding: 10px;
+	border-radius: 20px;
+	background: rgba(255,255,255,0.1);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	backdrop-filter: blur(5px);
+	top 0;
+	bottom: 10%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-template-rows: 70% 15% 15%;
+	grid-template-areas:
+	"myDescription photoAndName"
+	"redirections photoAndName"
+	"redirections photoAndName"
+	;
+}
+
+.myDescription
+{
+	background: rgba(0,0,0,0.5);
+	border-radius: 20px;
+	padding: 5px;
+	grid-area: myDescription;
+	overflow: hidden;
+	font-size: 2.6vw;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2.5px;
+}
+
+.redirections
+{
+	grid-area: redirections;
+	 margin: 2.5px;
+	background: rgba(0,0,0,0.5);
+	border-radius: 20px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 15% 35% 15% 35%;
+	grid-template-rows: 100%;
+	grid-template-areas:
+	"gmailLogo gmailLink linkedinLogo linkedinLink"
+	;
+}
+
+.gmailLogo
+{
+	width: 50%;
+	margin: auto;
+	height: auto;
+	max-height: 100%;
+	aspect-ratio: 1/1;
+	grid-area: gmailLogo;
+	display: grid;
+	grid-template-rows: 100%;
+	grid-template-columns: 100%;
+}
+
+.gmailLogo svg
+{
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	margin: auto;
+}
+
+.gmailLink
+{
+	cursor: pointer;
+	text-decoration: underline;
+	grid-area: gmailLink;
+	font-size: 2.9vw;
+	display: flex;
+	align-items: center;
+}
+
+.linkedinLink
+{
+	grid-area: linkedinLink;
+	font-size: 2.9vw;
+	display: flex;
+	align-items: center;
+}
+
+.linkedinLogo
+{
+	width: 55%;
+	height: auto;
+	max-height: 80%;
+	margin: auto;
+	aspect-ratio: 1/1;
+	grid-area: linkedinLogo;
+	display: grid;
+	grid-template-rows: 100%;
+	grid-template-columns: 100%;
+}
+
+.linkedinLogo svg
+{
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	margin: auto;
+}
+
+.photoAndName
+{
+	margin: 2.5px;
+	border-radius: 20px;
+	padding: 5px;
+	grid-area: photoAndName;
+	background: rgba(0,0,0,0.5);
+	display: grid;
+	grid-template-rows: 80% 20%;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+	"photo"
+	"name"
+	;
+}
+
+.myPhoto
+{
+	grid-area: photo;
+	width: auto;
+	height: auto;
+	max-height: 100%;
+	margin: auto;
+}
+
+.myName
+{
+	grid-area: name;
+	width: auto;
+	height: auto;
+	max-width: 95%;
+	margin: auto;
+}
+
+.gmailFormContact
+{
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 95%;
+	height: 95%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 20% auto 20%;
+	grid-template-areas:
+	"name email"
+	"message message"
+	"submit submit"
+	;
+}
+
+.gmailFormContact *
+{
+	border-radius: 20px;
+	background: rgba(0,0,0, 0.5);
+	text-align: center;
+	/*border: 1px solid white;*/
+	border: none;
+	margin: 5px 5px;
+}
+
+.gmailFormContact *:focus
+{
+	outline: none;
+}
+
+.gmailFormContact .theName
+{
+	/*color: black;*/
+	grid-area: name;
+}
+
+.gmailFormContact .theEmail
+{
+	/*color: black;*/
+	grid-area: email;
+}
+
+.gmailFormContact .theMessage
+{
+	/*color: black;*/
+	grid-area: message;
+}
+
+.gmailFormContact .theButton
+{
+	/*color: black;*/
+	grid-area: submit;
+	width: 50%;
+	height: 90%;
+	margin: auto;
+}
+
+/*PSEUDO PORTRAIT LAYOUT*/
+@media screen and (max-aspect-ratio: 4/5)
+{
+
+	.contactMeContent
+	{
+		height: 50%;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 40% 60%;
+		grid-template-areas:
+		"myDescription myDescription"
+		"redirections photoAndName"
+		;
+	}	
+
+	.redirections
+	{
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 50% 50%;
+		grid-template-areas:
+		"gmailLogo gmailLink"
+		"linkedinLogo linkedinLink"
+		;
+	}
+
+/*END SQUARE LAYOUT*/}
+
+/*PORTRAIT LAYOUT*/
+@media screen and (max-aspect-ratio: 9/16)
+{
+	.myDescription
+	{
+		font-size: 4vw;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 2.5px;
+	}
+
+	.redirections
+	{
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas:
+		"gmailLogo"
+		"gmailLink"
+		"linkedinLogo"
+		"linkedinLink"
+		;
+	}
+
+	.gmailLink
+	{
+		justify-content: center;
+		font-size: 4vw;
+	}
+
+	.linkedinLink
+	{
+		justify-content: center;
+		font-size: 4vw;
+	}
+
+	.gmailLogo
+	{
+		width: 35%;
+	}
+
+	.linkedinLogo
+	{
+		width: 40%;
+	}
+
+	.gmailFormContact
+	{	
+		grid-template-columns: 100%;
+		grid-template-rows: 20% 20% 45% 15%;
+		grid-template-areas:
+		"name"
+		"email"
+		"message"
+		"submit"
+		;
+	}
+
+	.gmailFormContact .theMessage
+	{
+		font-size: 5vw;
+	}
+
+/*END PORTRAIT LAYOUT*/}
+
+@media screen and (min-aspect-ratio: 6/4)
+{
+	.contactMeContent
+	{
+		width: 50%;
+	}
+	.myDescription
+	{
+		font-size: 2vh;
+	}
+
+	.redirections *
+	{
+		font-size: 3vh;
+	}
+}

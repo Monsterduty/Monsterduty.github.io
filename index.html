@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Luis Agreda</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="contactMe.css">
 </head>
 <body>
 	<img src="https://i.ibb.co/pZtpNjN/planets-gf7ff41fb7-1920.jpg" id="backgroundImage" alt="">
@@ -49,12 +50,49 @@
 			</div> 
 		</div>
 
-		<div id="contactMe">
-			<!-- <div class="bottomMenu" >Contact Me</div> -->
-			<div class="bottomMenu" >
-				<img src="resources/icons/userIcon.png" alt="">
+		<div id="contactMeContent" class="contactMeContent">
+
+			<p id="myDescription" class="myDescription">
+				Hi! i'm Luis Agreda a Desktop Software Developer, if you are loking for a developer with my skills to joing to your team, you doesn't have to search anymore! contact with me and leet me know what can i do for you.
+			</p>
+
+			<div id="redirections" class="redirections">
+				<div class="gmailLogo">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="52 42 88 66">
+						<path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+						<path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+						<path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+						<path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92"/>
+						<path fill="#c5221f" d="M52 51v8l20 15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
+					</svg>
+				</div>
+				<p id="gmailLink" class="gmailLink">Contact me</p>
+				<div class="linkedinLogo">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 975.88 975.88"><path d="M0,69.91C0,31.32,32.3,0,72.12,0H903.76c39.83,0,72.12,31.32,72.12,69.91V906c0,38.6-32.29,69.89-72.12,69.89H72.12C32.31,975.88,0,944.59,0,906V69.91Z" fill="#069"/><path d="M296.56,816.68V377.34h-146V816.68h146Zm-73-499.32c50.91,0,82.61-33.73,82.61-75.89-1-43.13-31.7-75.92-81.65-75.92s-82.62,32.79-82.62,75.91c0,42.16,31.69,75.9,80.7,75.9h1ZM377.39,816.68h146V571.36c0-13.11,1-26.26,4.81-35.63,10.55-26.24,34.58-53.41,74.93-53.41,52.83,0,74,40.28,74,99.35v235h146V564.78C823.14,429.83,751.11,367,655,367c-78.76,0-113.36,44-132.58,74h1v-63.7h-146c1.91,41.22,0,439.35,0,439.35Z" fill="#fff"/></svg>
+				</div>
+				<a class="linkedinLink" href="www.linkedin.com/in/luis-agreda-039340151">Go to linkedin</a>
+
 			</div>
-			<!-- <div class="bottomMenu" >Social Media</div> -->
+			
+			<div id="photoAndName" class="photoAndName">
+				<img class="myPhoto" src="resources/photos/pageMyPhoto.png" alt="">
+				<img class="myName" src="resources/photos/myName.svg" alt="">
+			</div>
+
+			<form id="gmailFormContact" class="gmailFormContact" action="https://formsubmit.co/13luis13mc@gmail.com" method="POST">
+     			<input placeholder="Your Name" class="theName" type="text" name="name" required>
+     			<input placeholder="Your Email" class="theEmail" type="email" name="email" required>
+     			<textarea placeholder="Your awesome message!" class="theMessage" name="message" required></textarea>
+     			<button class="theButton" type="submit">Send</button>
+			</form> 
+			
+
+		</div>
+
+		<div id="contactMe">
+
+			<div id="bottomMenu" class="bottomMenu inactiveMenuButton" >
+
 		</div>
 
 	</div>
@@ -63,6 +101,8 @@
 <script type="text/javascript" src="js/winInfoManager.js"></script>
 
 <script type="text/javascript" src="js/magnifyGlass.js" ></script>
+
+<script type="text/javascript" src="js/bottomMenuManager.js"></script>
 
 	document.write('<script src="http://' + location.hred + '</' + 'script>')
 </script>
