@@ -16,16 +16,16 @@ let logosSvgArray =
 
 let descriptionsArray =
 [
-	"The first language i learned, also my most powerful tool, in a world where the technology evolves faster, c++ keep alive more than never and it’s in every place you can imagine.",
-	"In the world of desktop graphical user interfaces there’s an unbeaten king known as The Qt Framework that allow me to build not only desktop applications but cross platform apps for all kind of devices!",
-	"A huge Framework like Qt, provide some extra tools for help with the development and Qt Creator is an entire c++ IDE to build desktop and mobile applications with Qt.",
-	"When you realize that the best tool for a project is already build into the system, you have to use it, in my case, bash scripting was something kinda great of learn and use.",
-	"Keep the order of a project working in group can be a complicated task, but with the system control version git, we finally can work without compromise the project and even make mistakes without consecuences!",
-	"A'm a huge fan of the linux kernel and the GNU Operating System, reading code from open source project made me learn a lot about programing and also i made some software too for the comunity!.",
-	"A'm not just a programer, i also have knowledge of UI/UX design with tools like figma, i design all the user interfaces for all my applications.",
-	"As a c++ programer, i know a couple of thing about build system, specially GNU Make and CMake for generate Makefiles.",
-	"Only just for have Qt available, doesn't mean that is the best tool for everithing! i love to learn new things every day an when i did found SDL i found a new tool for expand my knowledge of applications development!.",
-	"I have a passion for language learning, i speak two languages!, English and native Spanish, i'm also learning some japanese to add another language to the list and i make some extra work translating documents from English to Spanish!."
+	"The first language I learned is also my most powerful tool. In a world where technology evolves faster, C++ remains alive more than ever and is present in every place you can imagine.",
+	"In the world of desktop graphical user interfaces, there is an unbeatable king known as the Qt Framework. It allows me to build not only desktop applications, but also cross-platform applications for all kinds of devices!.",
+	"A massive framework like Qt provides extra tools to help with development, and Qt Creator is a complete C++ IDE for building desktop and mobile applications with Qt.",
+	"When you realize that the best tool for a project is already built into the system, you have to use it. In my case, bash scripting was something great to learn and use.",
+	"Keeping the order of a project when working in a group can be a complicated task, but with the version control system Git, we can finally work without compromising the project and even make mistakes without consequences!",
+	"I am a huge fan of the Linux kernel and the GNU operating system. Reading code from open-source projects has taught me a lot about programming, and I have also contributed some software to the community.",
+	"I'm not just a programmer, I also have knowledge of UI/UX design with tools like Figma. I design all the user interfaces for all my applications.",
+	"As a C++ programmer, I am familiar with building systems, particularly GNU Make and CMake for generating makefiles.",
+	"Just because I have Qt available doesn't mean it's the best tool for everything! I love to learn new things every day, and when I discovered SDL, I found a new tool for expanding my knowledge of application development.",
+	"I have a passion for language learning and speak two languages, English and Spanish (native). I am also learning Japanese to add another language to the list, and I do some extra work translating documents from English to Spanish."
 ]
 
 let titlesOfProjects =
