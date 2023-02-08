@@ -155,6 +155,9 @@ function openWinInfo()
 	if ( mGlass != undefined )
 		mGlass.remove()
 
+	//close the menuButton if it's opened.
+	closeBottomMenu()
+
 	let element = document.getElementById("Logo")
 	element.setAttribute("src", "resources/logos/winInfo/" + logosSvgArray[currentIconSelected] )
 

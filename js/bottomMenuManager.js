@@ -2,6 +2,9 @@ let button = document.getElementById("bottomMenu")
 
 function openBottomMenu()
 {
+	//close winInfo if it's opem.
+	closeWinInfo()
+
 	let menu = document.getElementById("contactMeContent")
 	
 	if ( menu.style.visibility == "visible" ) return;
@@ -21,7 +24,7 @@ function openBottomMenu()
 	]
 
 	menu.style.visibility = 'visible'
-	menu.animate(openAnimation, 500)
+	menu.animate(openAnimation, 200)
 
 	let description = document.getElementById("myDescription")
 	description.style.visibility = "visible"
@@ -54,7 +57,7 @@ function closeBottomMenu()
 		}
 	]
 
-	menu.animate(closeAnimation, 500)
+	menu.animate(closeAnimation, 200)
 
 	setTimeout(() => {
 		menu.style.visibility = 'hidden'
@@ -72,7 +75,7 @@ function closeBottomMenu()
 		for ( let i = 0; i < contactForm.length; i++ )
 			contactForm[i].style.visibility = "hidden"
 		contactForm.style.visibility = "hidden"
-	},500)
+	},200)
 
 }
 
