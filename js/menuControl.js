@@ -71,3 +71,6 @@ for ( let i = 0; i < icons.length; i++ )
 }
 
 window.addEventListener("keydown", (e) => { keyDeal(e.key) } )
+window.addEventListener("resize", (e) => {
+	if ( cursor.style.filter == "opacity(100%) blur(13px)" ) setPos(cursorPos)
+} )
