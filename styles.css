@@ -159,6 +159,9 @@ body
 	margin: 0 auto;
 	font-size: 3.8vh;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	padding: 5px;
 }
 
 .infoName
@@ -166,15 +169,29 @@ body
 	width: 100%;
 	grid-area: name;
 	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+	grid-template-rows: 100%;
+	grid-template-columns: 50% 50%;
+	grid-template-areas: "leftName rightName";
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.infoName .nameText
+.infoName .nameTextPair
 {
 	margin: auto;
+	background: rgba(0,0,0,0.5);
+	border-radius: 20px;
+	padding: 5px 10px;
+}
+
+.infoName .nameTextAlone
+{
+	margin: auto;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	padding: 5px 10px;
 }
 
 .infoImages
@@ -225,6 +242,13 @@ body
 	justify-content: center;
 	align-items: center;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.infoLink *
+{
+	background: rgba(0,0,0,0.5);
+	border-radius: 20px;
+	padding: 4px 10px;
 }
 
 #contactMe
@@ -362,7 +386,7 @@ body
 		"image image"
 		"link link"
 		;
-		grid-template-rows: 40% 6% 48% 6%;
+		grid-template-rows: 40% 9% 43% 8%;
 		grid-template-columns: 40% 60%;
 	}
 
@@ -380,7 +404,7 @@ body
 
 	.infoLogo
 	{
-		width: 90%;
+		width: 70%;
 	}
 
 	.infoDescription

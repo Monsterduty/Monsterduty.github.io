@@ -61,7 +61,7 @@ let links =
 	"https://github.com/Monsterduty/shellpkg",
 	"available in the Git website",
 	"https://github.com/Monsterduty/i3AutoLayout",
-	"www.figma.com",
+	"https://www.figma.com",
 	"Most simplest CMakeLists.txt file",
 	"https://github.com/Monsterduty/simple-flappy-sdl2",
 	"Chaper one of The MIllionaire Son-in-law",
@@ -129,13 +129,13 @@ function loadName()
 		let name = document.createElement("div")
 		let text = document.createTextNode(titlesOfProjects[currentIconSelected].substr(0, titlesOfProjects[currentIconSelected].search("  ")))
 		name.appendChild(text)
-		name.setAttribute("class", "nameText")
+		name.setAttribute("class", "nameTextPair")
 		element.appendChild(name)
 
 		name = document.createElement("div")
 		text = document.createTextNode(titlesOfProjects[currentIconSelected].substr(titlesOfProjects[currentIconSelected].search("  ") + 2))
 		name.appendChild(text)
-		name.setAttribute("class", "nameText")
+		name.setAttribute("class", "nameTextPair")
 		element.appendChild(name)
 	}
 	else
@@ -143,9 +143,32 @@ function loadName()
 		let text = document.createTextNode(titlesOfProjects[currentIconSelected])
 		let name = document.createElement("div")
 		name.appendChild(text)
-		name.setAttribute("class", "nameText")
-		element.appendChild(text)
+		name.setAttribute("class", "nameTextAlone")
+		element.appendChild(name)
 	}
+}
+
+function loadLink()
+{
+	element = document.getElementById("Link")
+	element.innerHTML = ""
+
+	let container;
+
+	if ( links[currentIconSelected].search("https") != -1 )
+	{
+		container = document.createElement("a")
+		container.setAttribute("href", links[currentIconSelected])
+		container.setAttribute("target", "_blank")
+	}
+	else
+		container = document.createElement("p")
+
+	text = document.createTextNode(links[currentIconSelected])
+	container.appendChild(text)
+
+	element.appendChild(container)
+
 }
 
 function openWinInfo()
@@ -171,10 +194,7 @@ function openWinInfo()
 
 	loadIMG()
 
-	element = document.getElementById("Link")
-	element.innerHTML = ""
-	text = document.createTextNode(links[currentIconSelected])
-	element.appendChild(text)
+	loadLink()
 
 	let winInfo = document.getElementById("winInfo")
 
@@ -201,6 +221,9 @@ function closeWinInfo()
 	//check if there's a winInfo element to close
 	let winInfo = document.getElementById("winInfo")
 	if (winInfo == undefined) return;
+
+	//check if it's already hidden.
+	if ( winInfo.style.visibility == "hidden" ) return
 
 	let closeAnimation =
 	[
