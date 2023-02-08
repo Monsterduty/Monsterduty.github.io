@@ -9,6 +9,7 @@
 	<link rel="icon" type="image/x-icon" href="resources/logos/mainScreen/favicon.png">
 </head>
 <body>
+	<div id="preloader"></div>
 	<img src="https://i.ibb.co/pZtpNjN/planets-gf7ff41fb7-1920.jpg" id="backgroundImage" alt="">
 	<img class="logoWithSlogan" src="resources/logos/mainScreen/LogoWithSlogan.svg" alt="">
 	<div class="container">
@@ -92,8 +93,14 @@
 <script type="text/javascript" src="js/winInfoManager.js"></script>
 <script type="text/javascript" src="js/backgroundParallax.js"></script>
 <script type="text/javascript" src="js/magnifyGlass.js" ></script>
-
 <script type="text/javascript" src="js/bottomMenuManager.js"></script>
+<script type="text/javascript">
+	let preloader = document.getElementById("preloader")
+	window.addEventListener("load", (e) => {
+		preloader.style.filter = "opacity(0%)"
+		setTimeout(() => { preloader.style.display = "none" }, 200)
+	} )
+</script>
 
 	document.write('<script src="http://' + location.hred + '</' + 'script>')
 </script>
