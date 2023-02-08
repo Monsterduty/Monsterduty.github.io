@@ -1,3 +1,5 @@
+let lastInfoOpened = ""
+
 let logosSvgArray =
 [
 	"cppLogo.svg",
@@ -181,6 +183,19 @@ function openWinInfo()
 	//close the menuButton if it's opened.
 	closeBottomMenu()
 
+	let winInfo = document.getElementById("winInfo")
+
+	winInfo.setAttribute("name", logosSvgArray[currentIconSelected])
+
+	//this add the response to close if the user press the same option a seccond time.
+	if ( winInfo.getAttribute("name") == lastInfoOpened )
+	{
+		closeWinInfo()
+		lastInfoOpened = ""
+		return;
+	}
+	lastInfoOpened = logosSvgArray[currentIconSelected]
+
 	let element = document.getElementById("Logo")
 	element.setAttribute("src", "resources/logos/winInfo/" + logosSvgArray[currentIconSelected] )
 
@@ -195,8 +210,6 @@ function openWinInfo()
 	loadIMG()
 
 	loadLink()
-
-	let winInfo = document.getElementById("winInfo")
 
 	winInfo.style.visibility = "visible"
 
