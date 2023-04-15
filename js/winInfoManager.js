@@ -58,7 +58,7 @@ let projectsImages =
 let links =
 [
 	"https://github.com/Monsterduty/mktest",
-	"beta coming soon",
+	"https://github.com/Monsterduty/ANBrowser-qt",
 	"available in the Qt website",
 	"https://github.com/Monsterduty/shellpkg",
 	"available in the Git website",
