@@ -4,12 +4,59 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Luis Agreda</title>
+
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	<link rel="stylesheet" href="styles/contactMe.css">
 	<link rel="icon" type="image/x-icon" href="resources/logos/mainScreen/favicon.png">
+
+	<link rel="preload" as="image" href="resources/logos/mainScreen/preloader.gif"
+		onload=
+		"	
+			this.as = 'image';
+			window.addEventListener('load', (e) => {
+				preloader.style.filter = 'opacity(0%)'
+				setTimeout(() => { preloader.style.display = 'none' }, 200)
+			} )
+		"
+	>
+
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			color: white;
+			font-family: 'Quicksand', sans-serif;
+		}
+		
+		html
+		{
+			height: 100%;
+			max-height: 100%;
+		}
+		
+		body
+		{
+			height: 100%;
+			max-height: 100%;
+			overflow: hidden;
+		}
+
+		#preloader
+		{
+			background: #0E111F url(../resources/logos/mainScreen/preloader.gif) no-repeat center center;
+			width: 100%;
+			height: 100vh;
+			z-index: 100;
+			transition: 200ms;
+		}
+	</style>
+
 </head>
 <body>
+
 	<div id="preloader"></div>
+
 	<img src="https://i.ibb.co/pZtpNjN/planets-gf7ff41fb7-1920.jpg" id="backgroundImage" alt="">
 	<img class="logoWithSlogan" src="resources/logos/mainScreen/LogoWithSlogan.svg" alt="">
 	<div class="container">
@@ -89,16 +136,36 @@
 
 	</div>
 </body>
+
 <script type="text/javascript" src="js/menuControl.js" ></script>
 <script type="text/javascript" src="js/winInfoManager.js"></script>
 <script type="text/javascript" src="js/backgroundParallax.js"></script>
 <script type="text/javascript" src="js/magnifyGlass.js" ></script>
 <script type="text/javascript" src="js/bottomMenuManager.js"></script>
-<script type="text/javascript">
-	let preloader = document.getElementById("preloader")
-	window.addEventListener("load", (e) => {
-		preloader.style.filter = "opacity(0%)"
-		setTimeout(() => { preloader.style.display = "none" }, 200)
-	} )
-</script>
+
+<link rel="preload" as="image" href="resources/logos/winInfo/cppLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/QtLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/QtCreatorLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/BashLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/GitLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/LinuxLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/FigmaLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/CMakeLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/CMakeLogo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/Sdl2Logo.svg">
+<link rel="preload" as="image" href="resources/logos/winInfo/TranslatorLogo.svg">
+
+<link rel="preload" as="image" href="resources/projectsImages/mktestCodeReview.gif">
+<link rel="preload" as="image" href="resources/projectsImages/mktestLinuxReview.gif">
+<link rel="preload" as="image" href="resources/projectsImages/ANBrowser.png">
+<link rel="preload" as="image" href="resources/projectsImages/QtCreator.png">
+<link rel="preload" as="image" href="resources/projectsImages/shellpkgExample.gif">
+<link rel="preload" as="image" href="resources/projectsImages/gitUsage.gif">
+<link rel="preload" as="image" href="resources/projectsImages/i3AutoLayout.gif">
+<link rel="preload" as="image" href="resources/projectsImages/figmaCapture.png">
+<link rel="preload" as="image" href="resources/projectsImages/cmakeExample.gif">
+<link rel="preload" as="image" href="resources/projectsImages/flappyBirdSDL2.gif">
+<link rel="preload" as="image" href="resources/projectsImages/millionaireSonInLaw.png">
+<link rel="preload" as="image" href="resources/projectsImages/elYernoMillonarioMosterdutyTranslation.png">
+
 </html>
