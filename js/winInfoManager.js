@@ -211,6 +211,8 @@ function openWinInfo()
 
 	loadLink()
 
+	for ( let i = 1; i < winInfo.childNodes.length; i+= 2 )winInfo.childNodes[i].style.opacity = 0.0
+
 	winInfo.style.visibility = "visible"
 
 	let animation =
@@ -222,6 +224,22 @@ function openWinInfo()
 
 	winInfo.animate(animation, options)
 
+
+//animation to reveal the content of the winInfo when it's animation get done.
+//also another trick for performance.
+	setTimeout( () => {
+		let contentAnimation = 
+		[
+			{opacity: 0.0},
+			{opacity: 1.0},
+		]
+		options = { duration: 200, easing: "ease", iterations: 1 }
+
+		for ( let i = 1; i < winInfo.childNodes.length; i+= 2 )
+			winInfo.childNodes[i].animate(contentAnimation, options)
+		for ( let i = 1; i < winInfo.childNodes.length; i+= 2 )winInfo.childNodes[i].style.opacity = '1.0'
+	}, 400)
+	
 }
 
 function closeWinInfo()
@@ -238,6 +256,20 @@ function closeWinInfo()
 	//check if it's already hidden.
 	if ( winInfo.style.visibility == "hidden" ) return
 
+//close animation for elements in winInfo.
+//also another trick for performance.
+	let contentAnimation = 
+	[
+		{opacity: 1.0},
+		{opacity: 0.0},
+	]
+	options = { duration: 200, easing: "ease", iterations: 1 }
+	
+	for ( let i = 1; i < winInfo.childNodes.length; i+= 2 )
+		winInfo.childNodes[i].animate(contentAnimation, options)
+	for ( let i = 1; i < winInfo.childNodes.length; i+= 2 )winInfo.childNodes[i].style.opacity = '0.0'
+
+//close animation for winInfo
 	let closeAnimation =
 	[
 		{
@@ -247,9 +279,10 @@ function closeWinInfo()
 			width: "0%", height: "0%"
 		}
 	]
-	let options = { duration: 500, easing: "ease", iterations: 1 }
+	options = { duration: 500, easing: "ease", iterations: 1 }
 
-	winInfo.animate(closeAnimation, options)
+	//wait untill the elements inside winInfo end their close animation
+	setTimeout( () => {winInfo.animate(closeAnimation, options)}, 200)
 
 	//wait untill the animation ends to perform the hide style.
 	setTimeout( () => {winInfo.style.visibility = "hidden"} , 450)
