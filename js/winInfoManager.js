@@ -95,11 +95,17 @@ function loadIMG()
 		for ( let i = 0; i < targets.length; i++ )
 		{
 			targets[i].addEventListener("mouseenter", (e) => { glass(targets[i]) } )
+			targets[i].addEventListener("touchstart", (e) => { glass(targets[i]) })
 			targets[i].addEventListener("mouseout", (e) => {
 				let aux = document.getElementById("magnifyGlass")
 				if ( aux != undefined )
 					aux.remove()
 			} )
+			targets[i].addEventListener("touchend", (e) => {
+				let aux = document.getElementById("magnifyGlass")
+				if ( aux != undefined )
+					aux.remove()
+			})
 		}
 	}
 	else
@@ -113,11 +119,24 @@ function loadIMG()
 
 		//to add the magnifying Glass
 		image.addEventListener("mouseenter", (e) => {glass(image)})
+		image.addEventListener("touchstart", (e) => {glass(image)})
 		image.addEventListener("mouseout", (e) => {
 			let aux = document.getElementById("magnifyGlass")
 			if (aux != undefined)
 				aux.remove()
 		} )
+		image.addEventListener("touchend", (e) => {
+			console.log("touchend")
+			let aux = document.getElementById("magnifyGlass")
+			if ( aux != undefined )
+				aux.remove()
+		})
+		image.addEventListener("touchcancel", (e) => {
+			console.log("touchcancel")
+			let aux = document.getElementById("magnifyGlass")
+			if ( aux != undefined )
+				aux.remove()
+		})
 	}
 }
 
