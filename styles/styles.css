@@ -366,7 +366,16 @@
 /*SQUARE LAYOUT*/
 @media screen and (min-aspect-ratio: 9/16) and (max-aspect-ratio: 5/4)
 {
-
+	#backgroundImage
+	{
+		z-index: -2;
+		transition: 200ms;
+		width: 190%;
+		height: 105%;
+		position: fixed;
+		margin-top: -2%;
+		margin-left: -50.5%;
+	}
 	#menuItems
 	{
 		height: 9vw;
@@ -422,6 +431,16 @@
 /*PORTRAIT LAYOUT*/
 @media screen and (max-aspect-ratio: 9/16)
 {
+	#backgroundImage
+	{
+		z-index: -2;
+		transition: 200ms;
+		width: 330%;
+		height: 105%;
+		position: fixed;
+		margin-top: -2%;
+		margin-left: -130.5%;
+	}
 
 	#menuItems
 	{
