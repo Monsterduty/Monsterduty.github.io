@@ -8,4 +8,23 @@ function parallaxControler( mouse )
 	backgroundImage.style.transform = "translate(" + x*0.02 + "px," + y*0.02 + "px)"
 }
 
-window.addEventListener("mousemove", (e) => { parallaxControler(e) } )
+function containsPointer( clickEvent, element )
+{
+	let X = clickEvent.clientX
+	let Y = clickEvent.clientY
+
+	if ( X >= element.offsetLeft && X <= element.offsetLeft + element.offsetWidth )
+		if ( Y >= element.offsetTop && Y <= element.offsetTop + element.offsetHeight )
+			return true
+	return false;
+}
+
+window.addEventListener("mousemove", (e) => {
+
+	//this statements are critical for mobile performance, since moving the background while performing
+	//animations of elements, is a too heavy task for most devices!.
+	if ( containsPointer( e, document.getElementById("bottomMenu") ) )
+		return false;
+
+	parallaxControler(e)
+} )
