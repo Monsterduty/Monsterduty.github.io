@@ -199,6 +199,7 @@ function openWinInfo()
 
 	//close the menuButton if it's opened.
 	closeBottomMenu()
+	resetBottomMenu()
 
 	let winInfo = document.getElementById("winInfo")
 
@@ -303,4 +304,11 @@ function closeWinInfo()
 
 	//wait untill the animation ends to perform the hide style.
 	setTimeout( () => {winInfo.style.visibility = "hidden"} , 450)
+
+	resetMenu()
+}
+
+function resetWinInfo()
+{
+	lastInfoOpened = ""
 }

@@ -38,6 +38,7 @@
 	justify-content: center;
 	align-items: center;
 	margin: 2.5px;
+	visibility: hidden;
 }
 
 .redirections
@@ -54,6 +55,7 @@
 	grid-template-areas:
 	"gmailLogo gmailLink linkedinLogo linkedinLink"
 	;
+	visibility: hidden;
 }
 
 .gmailLogo
@@ -132,6 +134,7 @@
 	"photo"
 	"name"
 	;
+	visibility: hidden;
 }
 
 .myPhoto
@@ -176,10 +179,10 @@
 .gmailFormContact *
 {
 	border-radius: 20px;
+	border: 0.2em solid #AAAAAA;
 	background: rgba(0,0,0, 0.5);
 	text-align: center;
 	/*border: 1px solid white;*/
-	border: none;
 	margin: 5px 5px;
 }
 

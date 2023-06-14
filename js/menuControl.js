@@ -61,13 +61,22 @@ function keyDeal( key )
 		setPos( cursorPos )
 }
 
-cursor.style.marginLeft = "0px"
-cursor.style.filter = "opacity(0%)"
+function resetMenu()
+{
+	if (cursor.style.filter = "opacity(0%)")
+		return
+	cursor.style.marginLeft = "0px"
+	cursor.style.filter = "opacity(0%)"
+	cursorPos = -1
+	lastXPosition = 0
+}
+
+resetMenu()
 
 for ( let i = 0; i < icons.length; i++ )
 {
 	icons[i].addEventListener("mouseover", (e) => { cursorPos = i; setPos(i) } )
-	icons[i].addEventListener("click", (e) => { currentIconSelected = i; openWinInfo() } )
+	icons[i].addEventListener("click", (e) => { currentIconSelected = i; setPos(i); openWinInfo() } )
 }
 
 window.addEventListener("keydown", (e) => { keyDeal(e.key) } )

@@ -2,8 +2,12 @@ let button = document.getElementById("bottomMenu")
 
 function openBottomMenu()
 {
-	//close winInfo if it's opem.
+	//close winInfo if it's open.
 	closeWinInfo()
+	resetWinInfo()
+
+	//reset the position of the applications menu.
+	resetMenu()
 
 	let menu = document.getElementById("contactMeContent")
 	
@@ -26,14 +30,30 @@ function openBottomMenu()
 	menu.style.visibility = 'visible'
 	menu.animate(openAnimation, 200)
 
+	//animation for content.
+	openAnimation =
+	[
+		{
+			opacity: 0.0
+		},
+		{
+			opacity: 1.0
+		}
+	]
+
 	let description = document.getElementById("myDescription")
-	description.style.visibility = "visible"
-
 	let redirections = document.getElementById("redirections")
-	redirections.style.visibility = "visible"
-
 	let photoAndName = document.getElementById("photoAndName")
-	photoAndName.style.visibility = "visible"
+
+	setTimeout( () => {
+		description.animate(openAnimation, 200)
+		redirections.animate(openAnimation, 200)
+		photoAndName.animate(openAnimation, 200)
+		description.style.visibility = "visible"
+		redirections.style.visibility = "visible"
+		photoAndName.style.visibility = "visible"
+	}, 200 );
+	
 }
 
 function closeBottomMenu()
@@ -43,9 +63,24 @@ function closeBottomMenu()
 	
 	if ( menu.style.visibility == "hidden" ) return;
 
-	let pos = menu.getBoundingClientRect()
+	let description = document.getElementById("myDescription")
+	let redirections = document.getElementById("redirections")
+	let photoAndName = document.getElementById("photoAndName")
+	let contactForm = document.getElementById("gmailFormContact")
 
 	let closeAnimation =
+	[
+		{ opacity: 1.0 },
+		{ opacity: 0.0 }
+	]
+
+	description.animate(closeAnimation, 200)
+	redirections.animate(closeAnimation, 200)
+	photoAndName.animate(closeAnimation, 200)
+	contactForm.animate(closeAnimation, 200)
+
+	let pos = menu.getBoundingClientRect()
+	closeAnimation =
 	[
 		{
 			width: pos.width + "px",
@@ -57,26 +92,16 @@ function closeBottomMenu()
 		}
 	]
 
-	menu.animate(closeAnimation, 200)
-
 	setTimeout(() => {
-		menu.style.visibility = 'hidden'
-
-		let description = document.getElementById("myDescription")
+		menu.animate(closeAnimation, 200)
 		description.style.visibility = "hidden"
-
-		let redirections = document.getElementById("redirections")
 		redirections.style.visibility = "hidden"
-
-		let photoAndName = document.getElementById("photoAndName")
 		photoAndName.style.visibility = "hidden"
-
-		let contactForm = document.getElementById("gmailFormContact")
 		for ( let i = 0; i < contactForm.length; i++ )
 			contactForm[i].style.visibility = "hidden"
 		contactForm.style.visibility = "hidden"
+		setTimeout( () => { menu.style.visibility = "hidden" }, 200)
 	},200)
-
 }
 
 function changeToContactForm()
@@ -113,6 +138,11 @@ function changeState()
 	}
 	
 	button.setAttribute("class", currentClass)
+}
+
+function resetBottomMenu()
+{
+	button.setAttribute("class", "bottomMenu inactiveMenuButton")
 }
 
 button.addEventListener("click", (e) => {changeState()})
