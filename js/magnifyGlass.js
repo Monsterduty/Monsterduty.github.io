@@ -21,7 +21,7 @@ function mouseHandler( event, frame, pos )
 	return false;
 }
 
-function glass( item )
+function glass( item, optionalTouchEvent )
 {
 	let frame = document.getElementById( 'magnifyGlass' );
 	if ( frame == undefined )
@@ -30,13 +30,16 @@ function glass( item )
 		frame.style.backgroundImage = "url(" + item.src + ")"
 		frame.setAttribute("id", "magnifyGlass")
 		item.addEventListener( "contextmenu", (e) => {
-			e.preventDefault() 
-			e.stopPropagation()
+			//e.preventDefault() 
+			//e.stopPropagation()
 			return false
 		} )
 	}
-	item.addEventListener("mousemove", (e) => { console.log("mousemove"); mouseHandler(e, frame, item.getBoundingClientRect() ) } )
-	//item.addEventListener( "touchstart", (e)=> { console.log("touchstart"); mouseHandler( e, frame, item.getBoundingClientRect() ) } )
+	
+	if ( optionalTouchEvent != undefined )
+		mouseHandler( optionalTouchEvent.touches[0], frame, item.getBoundingClientRect() )
+
+	item.addEventListener("mousemove", (e) => { mouseHandler(e, frame, item.getBoundingClientRect() ) } )
 	item.addEventListener( "touchmove", (e) => mouseHandler( e.touches[0], frame, item.getBoundingClientRect() ) )
 	document.getElementById("winInfo").appendChild(frame)
 }
