@@ -19,7 +19,10 @@ function containsPointer( clickEvent, element )
 	return false;
 }
 
-window.addEventListener("mousemove", (e) => {
+//let eventsNames = [ "mousemove", "touchmove" ]
+
+//for ( let i = 0; i < 2; i++ )
+window.addEventListener( "mousemove", (e) => {
 
 	//this statements are critical for mobile performance, since moving the background while performing
 	//animations of elements, is a too heavy task for most devices!.
@@ -27,4 +30,11 @@ window.addEventListener("mousemove", (e) => {
 		return false;
 
 	parallaxControler(e)
+} )
+
+window.addEventListener( "touchmove", (e) =>{
+	if ( containsPointer( e.touches[0], document.getElementById("bottomMenu") ) )
+		return false
+
+	parallaxControler(e.touches[0])
 } )
